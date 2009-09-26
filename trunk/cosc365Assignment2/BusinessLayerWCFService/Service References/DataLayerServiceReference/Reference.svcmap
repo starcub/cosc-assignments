@@ -19,13 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://pulog.qsh.eu/DataLayerService.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1865/DataLayerService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DataLayerService.xsd" MetadataType="Schema" ID="29da5d3c-224c-4114-b68f-e5663145b5b4" SourceId="1" SourceUrl="http://pulog.qsh.eu/DataLayerService.svc?xsd=xsd2" />
-    <MetadataFile FileName="DataLayerService1.xsd" MetadataType="Schema" ID="1602e3d9-3fc2-4c91-acdf-6923585ec8b4" SourceId="1" SourceUrl="http://pulog.qsh.eu/DataLayerService.svc?xsd=xsd0" />
-    <MetadataFile FileName="DataLayerService2.xsd" MetadataType="Schema" ID="768eb496-5756-4d7b-bd2b-9ad6c433f7a5" SourceId="1" SourceUrl="http://pulog.qsh.eu/DataLayerService.svc?xsd=xsd1" />
-    <MetadataFile FileName="DataLayerService.wsdl" MetadataType="Wsdl" ID="df0534be-2eb6-46ba-b5bb-b1d8d0a3cd1e" SourceId="1" SourceUrl="http://pulog.qsh.eu/DataLayerService.svc?wsdl" />
+    <MetadataFile FileName="DataLayerService1.disco" MetadataType="Disco" ID="c76cda23-2f9a-477e-8e63-5ce551c989de" SourceId="1" SourceUrl="http://localhost:1865/DataLayerService.svc?disco" />
+    <MetadataFile FileName="DataLayerService.xsd" MetadataType="Schema" ID="eed7e5d1-2bbb-4e22-97d3-55e3ee3cabd7" SourceId="1" SourceUrl="http://localhost:1865/DataLayerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataLayerService1.xsd" MetadataType="Schema" ID="0675d201-1a9a-4f5b-8504-ebb15dfa58ef" SourceId="1" SourceUrl="http://localhost:1865/DataLayerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataLayerService2.xsd" MetadataType="Schema" ID="a4e42198-b9f7-49d4-84ff-406fcd254d0f" SourceId="1" SourceUrl="http://localhost:1865/DataLayerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataLayerService.wsdl" MetadataType="Wsdl" ID="c15027bf-a3b7-4e81-bdae-82a69193c044" SourceId="1" SourceUrl="http://localhost:1865/DataLayerService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

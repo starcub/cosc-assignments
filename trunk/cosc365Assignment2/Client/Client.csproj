@@ -64,13 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
-    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService.disco" />
     <None Include="Service References\BusinessLayerServiceReference\configuration91.svcinfo" />
     <None Include="Service References\BusinessLayerServiceReference\configuration.svcinfo" />
     <None Include="Service References\BusinessLayerServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService1.disco" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,10 +95,10 @@
     <WCFMetadataStorage Include="Service References\BusinessLayerServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService.wsdl" />
-    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService.xsd" />
-    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService1.xsd" />
-    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService2.xsd" />
+    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService1.wsdl" />
+    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService3.xsd" />
+    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService31.xsd" />
+    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService32.xsd" />
     <None Include="Service References\BusinessLayerServiceReference\Client.BusinessLayerServiceReference.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -120,8 +120,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2489</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>1870</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
