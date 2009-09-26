@@ -1,0 +1,8 @@
+#siteheader {
+	background-image: url(../graphics/banner.jpg);
+	}
+#title div {
+		 	background-image: url(../graphics/site_title.gif);
+}
+
+/* For sites with urls like http://www.canterbury.ac.nz/mysite, uncomment the lines above */

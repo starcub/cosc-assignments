@@ -71,6 +71,18 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService1.disco" />
+    <Content Include="index.htm" />
+    <Content Include="images\CSUnplugged2.png" />
+    <Content Include="images\logo_black.gif" />
+    <Content Include="images\voigt.jpg" />
+    <Content Include="scripts\__utm.js" />
+    <Content Include="styles\home.css" />
+    <Content Include="styles\home_002.css" />
+    <Content Include="styles\main.css" />
+    <Content Include="styles\main_002.css" />
+    <Content Include="styles\site.css" />
+    <Content Include="styles\site_002.css" />
+    <Content Include="styles\uchome.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

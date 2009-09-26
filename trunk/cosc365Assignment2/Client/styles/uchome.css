@@ -1,0 +1,27 @@
+p {clear: none}
+#newsbox h2 {
+	color: #fff;
+	font-size: 110%;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	margin: 0; 
+	padding:3px 0px 4px 10px;
+	background-image: url(http://www.canterbury.ac.nz/brand/service/news.gif);}
+#newsbox h2+p {border: 0}
+
+div#profile {padding: 0 5px 0 5px; margin: 0 0 10px 0; color: white}
+div#profile img {margin: 0 5px 0 0; padding: 0}
+div#profile p {border: 0}
+div#profile.arts {background-color: #4f8b11;}
+div#profile.bsec {background-color: #e5b43b; color: black}
+div#profile.education {background-color: #b50738;}
+div#profile.engineering {background-color: #7c6496;}
+div#profile.law {background-color: #577994;}
+div#profile.science {background-color: #1f5da8;}
+
+#profile a {color: #ffffff; text-decoration: none;}
+
+#homecolumn1 li {
+	border-top: 1px dotted #ccc;
+	}
+	

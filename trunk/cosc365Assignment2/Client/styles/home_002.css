@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* CSS Document */
+
+#breadcrumbs {padding: 0 15px 0 15px}
+#mainhome {padding: 15px;
+font-size: 68.75%;}
+
+#introduction {
+	width: 600px; 
+	float: left;
+	display: inline;
+	padding-bottom: 10px;
+	}
+	
+#homecolumn1 {
+	width: 650px; 
+	float: left;
+	display: inline;
+	padding-bottom: 10px;
+	}
+#homecolumn2 {
+	width: 306px; 
+	float: left;
+	display: inline;
+	padding-bottom: 10px;
+	}
+
+#homecolumn2 p {
+	border-top: 1px solid #ccc;
+	padding: 5px;
+	margin: 0;
+	line-height: 1.5em;
+	}
+#homecolumn2 h3+p {border:0}	
+
+
+#homecolumn1 h3 {
+	background-repeat: no-repeat;
+	background-position: top left;
+	margin: 0; 
+	padding:4px 0px 5px 10px;
+	font-size: 110%
+
+	}
+#homecolumn1 h4 {
+	background-position: top left;
+	background-repeat: no-repeat;
+	border: 0;
+	border-bottom: 1px solid;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 11px;
+	overflow: hidden;
+	font-size: 110%;
+	height: 20px; overflow: visible;
+	
+	}
+	
+#homecolumn1 h4 span {
+	background-position: top right;	
+	margin:  0;
+	padding: 0 65px 0 10px;
+	line-height: 20px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	}
+	
+	
+#homecolumn2 h3 {
+	font-size: 110%;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	margin: 0; 
+	padding:3px 0px 4px 10px;
+}
+
+	
+#homecolumn1 ul {
+	list-style: none; padding: 0; margin: 0 }
+	
+#homecolumn1 li {
+	padding: 10px; 
+	border-top: 1px dashed;
+	background-image:url(http://www.demo.canterbury.ac.nz/rebrand/central_graphics/circle.gif); 
+	background-position: left; 
+	background-repeat: no-repeat 
+	}
+	
+#homecolumn1 a {
+	text-decoration: none
+	}
+
+#homecolumn1 ul li:first-child {border:0}
+
+#home_col1, #home_col2, #home_col3 {
+		width: 200px;
+		max-width: 200px;
+		float: left;
+		margin-right: 15px;
+		display: inline;
+		margin-bottom: 15px; 
+		overflow: hidden; 
+		}	
+		
+#introduction h1 { font-size: 1.4em; line-height: 1em; font-weight: bold; margin-bottom: 0; font-family: "Trebuchet MS", arial, helvetica, sans-serif; margin-top:0}
+
+#introduction p {margin-top: 0; line-height: 1.4em;}
