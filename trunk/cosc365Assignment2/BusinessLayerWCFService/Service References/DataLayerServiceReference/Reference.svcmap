@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ce09e1e1-69f4-4e47-8664-dfa0398cf90c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://pulog.qsh.eu/DataLayerService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataLayerService.xsd" MetadataType="Schema" ID="29da5d3c-224c-4114-b68f-e5663145b5b4" SourceId="1" SourceUrl="http://pulog.qsh.eu/DataLayerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataLayerService1.xsd" MetadataType="Schema" ID="1602e3d9-3fc2-4c91-acdf-6923585ec8b4" SourceId="1" SourceUrl="http://pulog.qsh.eu/DataLayerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataLayerService2.xsd" MetadataType="Schema" ID="768eb496-5756-4d7b-bd2b-9ad6c433f7a5" SourceId="1" SourceUrl="http://pulog.qsh.eu/DataLayerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataLayerService.wsdl" MetadataType="Wsdl" ID="df0534be-2eb6-46ba-b5bb-b1d8d0a3cd1e" SourceId="1" SourceUrl="http://pulog.qsh.eu/DataLayerService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

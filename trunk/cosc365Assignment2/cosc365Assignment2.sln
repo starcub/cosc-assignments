@@ -2,6 +2,20 @@
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{892F8AB5-6BFD-4279-BC4C-838D4EF16C6C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{617545EE-D799-4736-93AD-0BCA577AD161} = {617545EE-D799-4736-93AD-0BCA577AD161}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataEntities", "DataEntities\DataEntities.csproj", "{D10620ED-B65E-40DB-867E-F6A85E632CC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayerWCFService", "DataLayerWCFService\DataLayerWCFService.csproj", "{4C0EF8AB-7B4C-4F84-94B8-2EA62A487058}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayerWCFService", "BusinessLayerWCFService\BusinessLayerWCFService.csproj", "{617545EE-D799-4736-93AD-0BCA577AD161}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C0EF8AB-7B4C-4F84-94B8-2EA62A487058} = {4C0EF8AB-7B4C-4F84-94B8-2EA62A487058}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{F531BFDC-9EB1-492E-A04C-33E6B229B730}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -17,6 +31,22 @@ Global
 		{892F8AB5-6BFD-4279-BC4C-838D4EF16C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{892F8AB5-6BFD-4279-BC4C-838D4EF16C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{892F8AB5-6BFD-4279-BC4C-838D4EF16C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D10620ED-B65E-40DB-867E-F6A85E632CC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10620ED-B65E-40DB-867E-F6A85E632CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10620ED-B65E-40DB-867E-F6A85E632CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10620ED-B65E-40DB-867E-F6A85E632CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C0EF8AB-7B4C-4F84-94B8-2EA62A487058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C0EF8AB-7B4C-4F84-94B8-2EA62A487058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C0EF8AB-7B4C-4F84-94B8-2EA62A487058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C0EF8AB-7B4C-4F84-94B8-2EA62A487058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617545EE-D799-4736-93AD-0BCA577AD161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617545EE-D799-4736-93AD-0BCA577AD161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617545EE-D799-4736-93AD-0BCA577AD161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617545EE-D799-4736-93AD-0BCA577AD161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F531BFDC-9EB1-492E-A04C-33E6B229B730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F531BFDC-9EB1-492E-A04C-33E6B229B730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F531BFDC-9EB1-492E-A04C-33E6B229B730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F531BFDC-9EB1-492E-A04C-33E6B229B730}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
