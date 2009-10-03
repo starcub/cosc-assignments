@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="DataLayerWCFService.DataLayerService" CodeBehind="DataLayerService.svc.cs" %>
