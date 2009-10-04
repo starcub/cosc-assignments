@@ -4,17 +4,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A0175192-8CD5-4317-9F92-9148E6958737}</ProjectGuid>
+    <ProjectGuid>{5A2299BA-2FD8-4652-98FC-8E58FE0A8C37}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Survey.Client</RootNamespace>
-    <AssemblyName>Survey.Client</AssemblyName>
+    <RootNamespace>Survey.BusinessLayerWCFService</RootNamespace>
+    <AssemblyName>Survey.BusinessLayerWCFService</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,85 +31,69 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.ServiceModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
-    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService.disco" />
-    <None Include="Service References\BusinessLayerServiceReference\configuration91.svcinfo" />
-    <None Include="Service References\BusinessLayerServiceReference\configuration.svcinfo" />
-    <None Include="Service References\BusinessLayerServiceReference\Reference.svcmap">
+    <Content Include="BusinessLayerService.svc" />
+    <None Include="Service References\DataLayerServiceReference\DataLayerService.disco" />
+    <None Include="Service References\DataLayerServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\DataLayerServiceReference\configuration.svcinfo" />
+    <None Include="Service References\DataLayerServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="CourseSurvey.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\BusinessLayerServiceReference\Reference.cs">
+    <Compile Include="Service References\DataLayerServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="CourseSurvey.aspx.cs">
-      <DependentUpon>CourseSurvey.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CourseSurvey.aspx.designer.cs">
-      <DependentUpon>CourseSurvey.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\BusinessLayerServiceReference\" />
+    <WCFMetadataStorage Include="Service References\DataLayerServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\DataSources\Survey.DataEntities.SurveyEntity.datasource" />
-    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService.wsdl" />
-    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService.xsd" />
-    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService1.xsd" />
-    <None Include="Service References\BusinessLayerServiceReference\BusinessLayerService2.xsd" />
-    <None Include="Service References\BusinessLayerServiceReference\Survey.Client.BusinessLayerServiceReference.Participation.datasource">
+    <None Include="Service References\DataLayerServiceReference\DataLayerService.wsdl" />
+    <None Include="Service References\DataLayerServiceReference\DataLayerService.xsd" />
+    <None Include="Service References\DataLayerServiceReference\DataLayerService1.xsd" />
+    <None Include="Service References\DataLayerServiceReference\DataLayerService2.xsd" />
+    <None Include="Service References\DataLayerServiceReference\Survey.BusinessLayerWCFService.DataLayerServiceReference.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BusinessLayerServiceReference\Survey.Client.BusinessLayerServiceReference.SurveyEntity.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Survey.BusinessLayer\Survey.BusinessLayer.csproj">
+      <Project>{5D60A502-13CA-4612-82B6-612ABED76EE8}</Project>
+      <Name>Survey.BusinessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -133,7 +113,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3320</DevelopmentServerPort>
+          <DevelopmentServerPort>4150</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetCourseByUserCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourseByUserCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCourseByUserCodeResult" type="tns:ArrayOfParticipation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfParticipation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Participation" nillable="true" type="tns:Participation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Participation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CourseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Role" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCourseByCourseCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="courseCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourseByCourseCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCourseByCourseCodeResult" type="tns:Course" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Course">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCourseByUserCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCourseByUserCode" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseByUserCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCourseByUserCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseByCourseCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCourseByCourseCode" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseByCourseCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCourseByCourseCodeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CourseInfoServiceSoap">
+    <wsdl:operation name="GetCourseByUserCode">
+      <wsdl:input message="tns:GetCourseByUserCodeSoapIn" />
+      <wsdl:output message="tns:GetCourseByUserCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseByCourseCode">
+      <wsdl:input message="tns:GetCourseByCourseCodeSoapIn" />
+      <wsdl:output message="tns:GetCourseByCourseCodeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CourseInfoServiceSoap" type="tns:CourseInfoServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCourseByUserCode">
+      <soap:operation soapAction="http://tempuri.org/GetCourseByUserCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseByCourseCode">
+      <soap:operation soapAction="http://tempuri.org/GetCourseByCourseCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CourseInfoServiceSoap12" type="tns:CourseInfoServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCourseByUserCode">
+      <soap12:operation soapAction="http://tempuri.org/GetCourseByUserCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseByCourseCode">
+      <soap12:operation soapAction="http://tempuri.org/GetCourseByCourseCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CourseInfoService">
+    <wsdl:port name="CourseInfoServiceSoap" binding="tns:CourseInfoServiceSoap">
+      <soap:address location="http://localhost:3406/CourseInfoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CourseInfoServiceSoap12" binding="tns:CourseInfoServiceSoap12">
+      <soap12:address location="http://localhost:3406/CourseInfoService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

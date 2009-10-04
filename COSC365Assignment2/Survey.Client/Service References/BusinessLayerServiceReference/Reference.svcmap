@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="508bad40-11df-49bc-854c-dbad2a1393e2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4150/BusinessLayerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BusinessLayerService.wsdl" MetadataType="Wsdl" ID="14246e8d-3a96-4e71-a8eb-6f3c2c08b34e" SourceId="1" SourceUrl="http://localhost:4150/BusinessLayerService.svc?wsdl" />
+    <MetadataFile FileName="BusinessLayerService.xsd" MetadataType="Schema" ID="87c16423-43e0-4d1c-935e-27da5b0dea42" SourceId="1" SourceUrl="http://localhost:4150/BusinessLayerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BusinessLayerService1.xsd" MetadataType="Schema" ID="bfaed099-e8fe-42bb-a447-b7120852d9bc" SourceId="1" SourceUrl="http://localhost:4150/BusinessLayerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BusinessLayerService.disco" MetadataType="Disco" ID="072fe793-e4b9-4095-aa6e-aca09fb48081" SourceId="1" SourceUrl="http://localhost:4150/BusinessLayerService.svc?disco" />
+    <MetadataFile FileName="BusinessLayerService2.xsd" MetadataType="Schema" ID="7404fa26-bfcf-4ea7-88b3-fbcc75038f5e" SourceId="1" SourceUrl="http://localhost:4150/BusinessLayerService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Survey.DataEntities
@@ -6,9 +6,9 @@ namespace Survey.DataEntities
     public class SurveyEntity
     {
         public string CourseCode;
-        public DateTime EndDate;
+        public string CourseName;
         public DateTime StartDate;
+        public DateTime EndDate;
         public List<QuestionEntity> Questions;
-        public SurveyInstanceEntity SurveyInstance;
     }
 }
