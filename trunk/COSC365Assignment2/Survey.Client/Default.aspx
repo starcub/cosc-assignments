@@ -9,7 +9,16 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <
+        <asp:Label ID="lblMessage" runat="server" />
+        <asp:TextBox ID="txtUsercode" runat="server" />
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_OnClick" />
+        <asp:GridView ID="gvCourses" runat="server" AutoGenerateColumns="false">
+            <Columns>
+                <asp:HyperLinkField HeaderText="Course" DataTextField="CourseCode" DataNavigateUrlFormatString="~/CourseSurvey.aspx?CourseCode={0}" DataNavigateUrlFields="CourseCode" />
+                <asp:BoundField HeaderText="Role" DataField="Role" />
+                
+            </Columns>
+        </asp:GridView>
     </div>
     </form>
 </body>

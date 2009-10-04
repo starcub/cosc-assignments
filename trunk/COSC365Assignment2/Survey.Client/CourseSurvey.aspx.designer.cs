@@ -11,7 +11,7 @@
 namespace Survey.Client {
     
     
-    public partial class _Default {
+    public partial class CourseSurvey {
         
         /// <summary>
         /// form1 control.
@@ -23,22 +23,31 @@ namespace Survey.Client {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblMessage control.
+        /// lblTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Label lblTitle;
         
         /// <summary>
-        /// txtUsercode control.
+        /// ltrIntro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsercode;
+        protected global::System.Web.UI.WebControls.Literal ltrIntro;
+        
+        /// <summary>
+        /// rptQuestions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptQuestions;
         
         /// <summary>
         /// btnSubmit control.
@@ -50,12 +59,12 @@ namespace Survey.Client {
         protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// gvCourses control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCourses;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

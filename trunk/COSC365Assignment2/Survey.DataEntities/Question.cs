@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 
 namespace Survey.DataEntities
 {
-    public class QuestionEntity
+    public class Question
     {
         public string Text;
         public int Score;
-        public string Comments;
+        public string Comment;
     }
 }

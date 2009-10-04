@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7c3385f4-b74a-4c22-abd7-b5508e446db4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4153/DataLayerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataLayerService.xsd" MetadataType="Schema" ID="c49a177b-a7a8-4f12-b8bd-eba453eef8a6" SourceId="1" SourceUrl="http://localhost:4153/DataLayerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataLayerService.disco" MetadataType="Disco" ID="d69f1529-dd20-41ab-8706-7d5da521a97c" SourceId="1" SourceUrl="http://localhost:4153/DataLayerService.svc?disco" />
+    <MetadataFile FileName="DataLayerServiceOperations.wsdl" MetadataType="Wsdl" ID="6760e72c-fb25-487d-8c0d-e94743cd5943" SourceId="1" SourceUrl="http://localhost:4153/DataLayerService.svc?wsdl" />
+    <MetadataFile FileName="DataLayerService1.xsd" MetadataType="Schema" ID="99150248-ce7f-47bf-bdd3-4b5e61b473b6" SourceId="1" SourceUrl="http://localhost:4153/DataLayerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataLayerService2.xsd" MetadataType="Schema" ID="dde14f37-f0b1-45ec-b7fa-074b1cadc41b" SourceId="1" SourceUrl="http://localhost:4153/DataLayerService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

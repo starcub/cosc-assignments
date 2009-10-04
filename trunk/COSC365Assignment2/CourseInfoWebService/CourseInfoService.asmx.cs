@@ -30,15 +30,22 @@ namespace SurveyManageApp.CourseInfoWebService
         }
 
         [WebMethod]
-        public string CourseByUserCode(string userCode)
+        public List<Participation> GetCourseByUserCode(string userCode)
         {
-            return getCourseByUserCode(userCode);
+            return getParticipationByUserCode(userCode);
         }
 
-        private string getCourseByUserCode(string userCode)
+        [WebMethod]
+        public Course GetCourseByCourseCode(string courseCode)
         {
-            string a = "";
-            string commandText = "select * from course c join Participation p on c.Code = p.CourseCode where p.UserCode = '" + userCode + "'";
+            return getCourseByCourseCode(courseCode);
+        }
+
+        private List<Participation> getParticipationByUserCode(string userCode)
+        {
+            List<Participation> results = new List<Participation>();
+            
+            string commandText = "select * from courses c join Participation p on c.Code = p.CourseCode where p.UserCode = '" + userCode + "'";
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(commandText, connection))
@@ -48,12 +55,39 @@ namespace SurveyManageApp.CourseInfoWebService
                     {
                         while (reader.Read())
                         {
-                            a +=String.Format("{0}, {1}",  reader[0], reader[1]);
+                            Participation participation = new Participation();
+                            participation.CourseCode = (string)reader["CourseCode"];
+                            participation.UserCode=userCode;
+                            participation.Role = (string)reader["Role"];
+                            results.Add(participation);
                         }
                     }
                 }
             }
-            return a;
+            return results;
+        }
+
+        private Course getCourseByCourseCode(string CourseCode)
+        {
+            Course results = new Course();
+
+            string commandText = "select * from courses where Code = '" + CourseCode+ "'";
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(commandText, connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            results.Code = (string)reader["Code"];
+                            results.Name= (string)reader["Name"];
+                        }
+                    }
+                }
+            }
+            return results;
         }
 
     }
