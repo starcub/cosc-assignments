@@ -50,10 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Question.cs" />
-    <Compile Include="SurveyEntity.cs" />
     <Compile Include="QuestionEntity.cs" />
     <Compile Include="QuestionInstanceEntity.cs" />
+    <Compile Include="SurveyEntity.cs" />
     <Compile Include="SurveyInstanceEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

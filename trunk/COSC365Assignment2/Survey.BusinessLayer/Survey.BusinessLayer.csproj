@@ -90,7 +90,7 @@
     <None Include="Service References\DataLayerServiceReference\Survey.BusinessLayer.DataLayerServiceReference.Participation.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\DataLayerServiceReference\Survey.BusinessLayer.DataLayerServiceReference.SurveyEntity.datasource">
+    <None Include="Service References\DataLayerServiceReference\Survey.BusinessLayer.DataLayerServiceReference.SurveyInstanceEntity.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>

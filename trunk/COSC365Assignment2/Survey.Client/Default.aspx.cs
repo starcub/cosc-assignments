@@ -15,7 +15,18 @@ namespace Survey.Client
         {
             get
             {
-                return txtUsercode.Text;
+                if (Session["UserCode"] != null)
+                {
+                    return Session["UserCode"].ToString();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                Session["UserCode"] = value;
             }
         }
 
@@ -47,7 +58,8 @@ namespace Survey.Client
 
         protected void btnSubmit_OnClick(object sender, EventArgs e)
         {
-            List<Participation> p = new BusinessLayerServiceReference.SurveyBLServicesClient().GetCourseByUserCode(Usercode);
+            Usercode = txtUsercode.Text;
+            List<SurveyInstanceEntity> p = new BusinessLayerServiceReference.SurveyBLServicesClient().GetCourseByUserCode(Usercode);
             if (p.Count == 0)
             {
                 lblMessage.Text = "User " + Usercode + " does not exist.";

@@ -14,6 +14,7 @@
         <asp:Literal ID="ltrIntro" runat="server" Text="Please rate this course according to each of the categories below. Please also include any comments that might be helpful for improving this course. Thank You!" />
         <asp:Repeater ID="rptQuestions" runat="server" >
             <ItemTemplate>
+                <asp:HiddenField ID="hidQuestionID" runat="server" Value='<%# Eval("QuestionID") %>' />
                 <asp:Label ID="lblQuestionText" runat="server" Font-Bold="true" Text='<%# Eval("Text") %>' /><br />
                 <asp:RadioButtonList ID="rblScore" runat="server" RepeatDirection="Horizontal" >
                     <asp:ListItem Text="Strongly Agree" Value="5" />
@@ -26,8 +27,8 @@
                 <asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine" /><br /><br />
             </ItemTemplate>
         </asp:Repeater>
-        <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_OnClick" />
-        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_OnClick" />
+        <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_OnClick" Text="Submit" />
+        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_OnClick" Text="Cancel" />
     </div>
     </form>
 </body>
