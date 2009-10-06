@@ -11,42 +11,10 @@
   <xs:element name="GetCourseByUserCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetCourseByUserCodeResult" nillable="true" type="tns:ArrayOfParticipation" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="GetCourseByUserCodeResult" nillable="true" type="q1:ArrayOfSurveyInstanceEntity" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:complexType name="ArrayOfParticipation">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Participation" nillable="true" type="tns:Participation" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfParticipation" nillable="true" type="tns:ArrayOfParticipation" />
-  <xs:complexType name="Participation">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CourseCode" nillable="true" type="xs:string">
-        <xs:annotation>
-          <xs:appinfo>
-            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="UserCode" nillable="true" type="xs:string">
-        <xs:annotation>
-          <xs:appinfo>
-            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string">
-        <xs:annotation>
-          <xs:appinfo>
-            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Participation" nillable="true" type="tns:Participation" />
   <xs:element name="GetSurveyByCourseCode">
     <xs:complexType>
       <xs:sequence>
@@ -57,7 +25,21 @@
   <xs:element name="GetSurveyByCourseCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="GetSurveyByCourseCodeResult" nillable="true" type="q1:SurveyEntity" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="GetSurveyByCourseCodeResult" nillable="true" type="q2:SurveyInstanceEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSurveyInstance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="survey" nillable="true" type="q3:SurveyInstanceEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSurveyInstanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertSurveyInstanceResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

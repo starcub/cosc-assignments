@@ -3,11 +3,11 @@ using System;
 
 namespace Survey.DataEntities
 {
-    public class QuestionInstanceEntity
+    public class QuestionInstanceEntity : QuestionEntity
     {
-
-        public string Comment;
+        public int QuestionInstanceID;
         public int Score;
-
+        public string Comment;
+        public int SurveyInstanceID;
     }
 }

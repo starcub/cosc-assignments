@@ -11,10 +11,14 @@ namespace Survey.BusinessLayer
     interface ISurveyBLServices
     {
         [OperationContract]
-        List<Participation> GetCourseByUserCode(string userCode);
+        List<SurveyInstanceEntity> GetCourseByUserCode(string userCode);
 
         [OperationContract]
-        SurveyEntity GetSurveyByCourseCode(string courseCode);
+        SurveyInstanceEntity GetSurveyByCourseCode(string courseCode);
+
+        [OperationContract]
+        int InsertSurveyInstance(SurveyInstanceEntity survey);
+
     }
 
 }

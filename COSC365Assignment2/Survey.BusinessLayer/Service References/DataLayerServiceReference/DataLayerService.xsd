@@ -57,7 +57,50 @@
   <xs:element name="GetSurveyByCourseCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="GetSurveyByCourseCodeResult" nillable="true" type="q1:SurveyEntity" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="GetSurveyByCourseCodeResult" nillable="true" type="q1:SurveyInstanceEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSurveyInstance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="survey" nillable="true" type="q2:SurveyInstanceEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSurveyInstanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertSurveyInstanceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertQuestionInstance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="question" nillable="true" type="q3:QuestionInstanceEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertQuestionInstanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertQuestionInstanceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSurveyInstancesByCourseCodeUsercode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="courseCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usercode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSurveyInstancesByCourseCodeUsercodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="GetSurveyInstancesByCourseCodeUsercodeResult" nillable="true" type="q4:SurveyInstanceEntity" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

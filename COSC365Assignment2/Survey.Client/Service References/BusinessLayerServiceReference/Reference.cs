@@ -15,89 +15,9 @@ namespace Survey.Client.BusinessLayerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Participation", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SurveyInstanceEntity", Namespace="http://schemas.datacontract.org/2004/07/Survey.DataEntities")]
     [System.SerializableAttribute()]
-    public partial class Participation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CourseCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RoleField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CourseCode {
-            get {
-                return this.CourseCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CourseCodeField, value) != true)) {
-                    this.CourseCodeField = value;
-                    this.RaisePropertyChanged("CourseCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string UserCode {
-            get {
-                return this.UserCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserCodeField, value) != true)) {
-                    this.UserCodeField = value;
-                    this.RaisePropertyChanged("UserCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Role {
-            get {
-                return this.RoleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RoleField, value) != true)) {
-                    this.RoleField = value;
-                    this.RaisePropertyChanged("Role");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SurveyEntity", Namespace="http://schemas.datacontract.org/2004/07/Survey.DataEntities")]
-    [System.SerializableAttribute()]
-    public partial class SurveyEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+    public partial class SurveyInstanceEntity : Survey.Client.BusinessLayerServiceReference.SurveyEntity {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CourseCodeField;
@@ -106,23 +26,22 @@ namespace Survey.Client.BusinessLayerServiceReference {
         private string CourseNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime EndDateField;
+        private System.DateTime DateSubmittedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<Survey.Client.BusinessLayerServiceReference.QuestionEntity> QuestionsField;
+        private System.Collections.Generic.List<Survey.Client.BusinessLayerServiceReference.QuestionInstanceEntity> QuestionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime StartDateField;
+        private string RoleField;
         
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SurveyInstanceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserCodeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CourseCode {
@@ -151,6 +70,114 @@ namespace Survey.Client.BusinessLayerServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateSubmitted {
+            get {
+                return this.DateSubmittedField;
+            }
+            set {
+                if ((this.DateSubmittedField.Equals(value) != true)) {
+                    this.DateSubmittedField = value;
+                    this.RaisePropertyChanged("DateSubmitted");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<Survey.Client.BusinessLayerServiceReference.QuestionInstanceEntity> Questions {
+            get {
+                return this.QuestionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QuestionsField, value) != true)) {
+                    this.QuestionsField = value;
+                    this.RaisePropertyChanged("Questions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Role {
+            get {
+                return this.RoleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RoleField, value) != true)) {
+                    this.RoleField = value;
+                    this.RaisePropertyChanged("Role");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SurveyInstanceID {
+            get {
+                return this.SurveyInstanceIDField;
+            }
+            set {
+                if ((this.SurveyInstanceIDField.Equals(value) != true)) {
+                    this.SurveyInstanceIDField = value;
+                    this.RaisePropertyChanged("SurveyInstanceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserCode {
+            get {
+                return this.UserCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserCodeField, value) != true)) {
+                    this.UserCodeField = value;
+                    this.RaisePropertyChanged("UserCode");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SurveyEntity", Namespace="http://schemas.datacontract.org/2004/07/Survey.DataEntities")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Survey.Client.BusinessLayerServiceReference.SurveyInstanceEntity))]
+    public partial class SurveyEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime EndDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime StartDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SurveyIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EndDate {
             get {
                 return this.EndDateField;
@@ -159,19 +186,6 @@ namespace Survey.Client.BusinessLayerServiceReference {
                 if ((this.EndDateField.Equals(value) != true)) {
                     this.EndDateField = value;
                     this.RaisePropertyChanged("EndDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<Survey.Client.BusinessLayerServiceReference.QuestionEntity> Questions {
-            get {
-                return this.QuestionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.QuestionsField, value) != true)) {
-                    this.QuestionsField = value;
-                    this.RaisePropertyChanged("Questions");
                 }
             }
         }
@@ -189,6 +203,19 @@ namespace Survey.Client.BusinessLayerServiceReference {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SurveyID {
+            get {
+                return this.SurveyIDField;
+            }
+            set {
+                if ((this.SurveyIDField.Equals(value) != true)) {
+                    this.SurveyIDField = value;
+                    this.RaisePropertyChanged("SurveyID");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -201,18 +228,90 @@ namespace Survey.Client.BusinessLayerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="QuestionInstanceEntity", Namespace="http://schemas.datacontract.org/2004/07/Survey.DataEntities")]
+    [System.SerializableAttribute()]
+    public partial class QuestionInstanceEntity : Survey.Client.BusinessLayerServiceReference.QuestionEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CommentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuestionInstanceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ScoreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SurveyInstanceIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Comment {
+            get {
+                return this.CommentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommentField, value) != true)) {
+                    this.CommentField = value;
+                    this.RaisePropertyChanged("Comment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int QuestionInstanceID {
+            get {
+                return this.QuestionInstanceIDField;
+            }
+            set {
+                if ((this.QuestionInstanceIDField.Equals(value) != true)) {
+                    this.QuestionInstanceIDField = value;
+                    this.RaisePropertyChanged("QuestionInstanceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Score {
+            get {
+                return this.ScoreField;
+            }
+            set {
+                if ((this.ScoreField.Equals(value) != true)) {
+                    this.ScoreField = value;
+                    this.RaisePropertyChanged("Score");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SurveyInstanceID {
+            get {
+                return this.SurveyInstanceIDField;
+            }
+            set {
+                if ((this.SurveyInstanceIDField.Equals(value) != true)) {
+                    this.SurveyInstanceIDField = value;
+                    this.RaisePropertyChanged("SurveyInstanceID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="QuestionEntity", Namespace="http://schemas.datacontract.org/2004/07/Survey.DataEntities")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Survey.Client.BusinessLayerServiceReference.QuestionInstanceEntity))]
     public partial class QuestionEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CommentsField;
+        private int QuestionIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ScoreField;
+        private int SurveyIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TextField;
@@ -228,27 +327,27 @@ namespace Survey.Client.BusinessLayerServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Comments {
+        public int QuestionID {
             get {
-                return this.CommentsField;
+                return this.QuestionIDField;
             }
             set {
-                if ((object.ReferenceEquals(this.CommentsField, value) != true)) {
-                    this.CommentsField = value;
-                    this.RaisePropertyChanged("Comments");
+                if ((this.QuestionIDField.Equals(value) != true)) {
+                    this.QuestionIDField = value;
+                    this.RaisePropertyChanged("QuestionID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Score {
+        public int SurveyID {
             get {
-                return this.ScoreField;
+                return this.SurveyIDField;
             }
             set {
-                if ((this.ScoreField.Equals(value) != true)) {
-                    this.ScoreField = value;
-                    this.RaisePropertyChanged("Score");
+                if ((this.SurveyIDField.Equals(value) != true)) {
+                    this.SurveyIDField = value;
+                    this.RaisePropertyChanged("SurveyID");
                 }
             }
         }
@@ -281,10 +380,13 @@ namespace Survey.Client.BusinessLayerServiceReference {
     public interface ISurveyBLServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISurveyBLServices/GetCourseByUserCode", ReplyAction="http://tempuri.org/ISurveyBLServices/GetCourseByUserCodeResponse")]
-        System.Collections.Generic.List<Survey.Client.BusinessLayerServiceReference.Participation> GetCourseByUserCode(string userCode);
+        System.Collections.Generic.List<Survey.Client.BusinessLayerServiceReference.SurveyInstanceEntity> GetCourseByUserCode(string userCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISurveyBLServices/GetSurveyByCourseCode", ReplyAction="http://tempuri.org/ISurveyBLServices/GetSurveyByCourseCodeResponse")]
-        Survey.Client.BusinessLayerServiceReference.SurveyEntity GetSurveyByCourseCode(string courseCode);
+        Survey.Client.BusinessLayerServiceReference.SurveyInstanceEntity GetSurveyByCourseCode(string courseCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISurveyBLServices/InsertSurveyInstance", ReplyAction="http://tempuri.org/ISurveyBLServices/InsertSurveyInstanceResponse")]
+        int InsertSurveyInstance(Survey.Client.BusinessLayerServiceReference.SurveyInstanceEntity survey);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
@@ -314,12 +416,16 @@ namespace Survey.Client.BusinessLayerServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<Survey.Client.BusinessLayerServiceReference.Participation> GetCourseByUserCode(string userCode) {
+        public System.Collections.Generic.List<Survey.Client.BusinessLayerServiceReference.SurveyInstanceEntity> GetCourseByUserCode(string userCode) {
             return base.Channel.GetCourseByUserCode(userCode);
         }
         
-        public Survey.Client.BusinessLayerServiceReference.SurveyEntity GetSurveyByCourseCode(string courseCode) {
+        public Survey.Client.BusinessLayerServiceReference.SurveyInstanceEntity GetSurveyByCourseCode(string courseCode) {
             return base.Channel.GetSurveyByCourseCode(courseCode);
+        }
+        
+        public int InsertSurveyInstance(Survey.Client.BusinessLayerServiceReference.SurveyInstanceEntity survey) {
+            return base.Channel.InsertSurveyInstance(survey);
         }
     }
 }
