@@ -6,12 +6,12 @@
         <xs:sequence>
           <xs:element minOccurs="0" name="CourseCode" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CourseName" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="DateSubmitted" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateSubmitted" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="Questions" nillable="true" type="tns:ArrayOfQuestionInstanceEntity" />
           <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SurveyInstanceID" type="xs:int" />
-          <xs:element minOccurs="0" name="UserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usercode" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

@@ -71,5 +71,43 @@ namespace Survey.Client
                 gvCourses.DataBind();
             }
         }
+
+        protected void gvCourses_OnRowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if ((e.Row != null) && e.Row.RowType == DataControlRowType.DataRow)
+            {
+                SurveyInstanceEntity surveyInstance = e.Row.DataItem as SurveyInstanceEntity;
+                // TODO: comment out this
+                surveyInstance.Role = surveyInstance.Role.Trim();
+                if (surveyInstance != null)
+                {
+                    if (surveyInstance.Status == "Scheduled")
+                    {
+                        // set link to be unusable
+                        ((HyperLink)e.Row.FindControl("lnkCourse")).Enabled = false;
+                        return;
+                    }
+                    if (surveyInstance.Role == "Staff")
+                    {
+                        // go to survey summary page
+                        ((HyperLink)e.Row.FindControl("lnkCourse")).NavigateUrl = "~/SurveySummary.aspx?CourseCode=" + surveyInstance.CourseCode;
+                    }
+                    else if (surveyInstance.Role == "Student")
+                    {
+                        // if the survey is open or the user has submitted the survey for the course
+                        if (surveyInstance.Status == "Underway" || surveyInstance.Status == "Submitted")
+                        {
+                            // don't do anything, leave it as default
+                        }
+                        else if (surveyInstance.Status == "Finished")
+                        {
+                            // redirect to view summary page
+                            ((HyperLink)e.Row.FindControl("lnkCourse")).NavigateUrl = "~/SurveySummary.aspx?CourseCode=" + surveyInstance.CourseCode;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

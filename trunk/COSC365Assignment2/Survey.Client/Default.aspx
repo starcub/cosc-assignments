@@ -11,10 +11,13 @@
         <asp:Label ID="lblMessage" runat="server" />
         <asp:TextBox ID="txtUsercode" runat="server" />
         <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_OnClick" />
-        <asp:GridView ID="gvCourses" runat="server" AutoGenerateColumns="false">
+        <asp:GridView ID="gvCourses" runat="server" AutoGenerateColumns="false" OnRowDataBound="gvCourses_OnRowDataBound">
             <Columns>
-                <asp:HyperLinkField HeaderText="Course" DataTextField="CourseCode" DataNavigateUrlFormatString="~/CourseSurvey.aspx?CourseCode={0}"
-                    DataNavigateUrlFields="CourseCode" />
+                <asp:TemplateField HeaderText="Course">
+                    <ItemTemplate>
+                        <asp:HyperLink ID="lnkCourse" runat="server" Text='<%# Eval("CourseCode") %>' NavigateUrl='<%#"~/CourseSurvey.aspx?CourseCode=" + Eval("CourseCode") %>' />    
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField HeaderText="Role" DataField="Role" />
                 <asp:BoundField HeaderText="Status" DataField="Status" />
             </Columns>

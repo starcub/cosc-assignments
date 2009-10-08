@@ -24,6 +24,13 @@ namespace Survey.DataLayer
         int InsertQuestionInstance(QuestionInstanceEntity question);
 
         [OperationContract]
-        SurveyInstanceEntity GetSurveyInstancesByCourseCodeUsercode(string courseCode, string usercode);
+        SurveyInstanceEntity GetSurveyInstancesByParticipation(Participation participation);
+
+        // TODO: rename this to GetSurveyByCourseCode
+        [OperationContract]
+        SurveyInstanceEntity GetSurveyInfoByCourseCode(string courseCode);
+
+        [OperationContract]
+        int GetTotalNumberOfStudentsByCourseCode(string courseCode);
     }
 }

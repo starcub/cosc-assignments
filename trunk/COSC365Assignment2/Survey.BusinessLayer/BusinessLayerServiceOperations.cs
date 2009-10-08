@@ -14,25 +14,22 @@ namespace Survey.BusinessLayer
         {
             List<Participation> participations = client.GetCourseByUserCode(userCode);
             List<SurveyInstanceEntity> results = new List<SurveyInstanceEntity>();
+            SurveyInstanceEntity survey = new SurveyInstanceEntity();
             foreach (Participation participation in participations)
             {
-                SurveyInstanceEntity surveyInstance = client.GetSurveyInstancesByCourseCodeUsercode(participation.CourseCode, participation.UserCode);
-                if (surveyInstance == null)
-                {
-                    surveyInstance = new SurveyInstanceEntity();
-                }
+                SurveyInstanceEntity surveyInstance = client.GetSurveyInstancesByParticipation(participation);
                 surveyInstance.CourseCode = participation.CourseCode;
                 surveyInstance.Role = participation.Role;
                 results.Add(surveyInstance);
             }
             foreach (SurveyInstanceEntity surveyInstance in results)
             {
-                if (surveyInstance.DateSubmitted != null)
+                if (surveyInstance.DateSubmitted == null)
                 {
-                    surveyInstance.Status = "Submitted " + surveyInstance.DateSubmitted;
-                }
-                else
-                {
+                    survey = client.GetSurveyInfoByCourseCode(surveyInstance.CourseCode);
+                    surveyInstance.StartDate = survey.StartDate;
+                    surveyInstance.EndDate = survey.EndDate;
+
                     if (DateTime.Now < surveyInstance.StartDate)
                     {
                         surveyInstance.Status = "Scheduled";
@@ -45,7 +42,11 @@ namespace Survey.BusinessLayer
                     {
                         surveyInstance.Status = "Finished";
                     }
-                }  
+                }
+                else
+                {
+                    surveyInstance.Status = "Submitted " + surveyInstance.DateSubmitted;
+                }
             }
             return results;
         }
@@ -66,6 +67,11 @@ namespace Survey.BusinessLayer
                 client.InsertQuestionInstance(question);
             }
             return survey.SurveyInstanceID;
+        }
+
+        public int GetTotalNumberOfStudentsByCourseCode(string courseCode)
+        {
+            return client.GetTotalNumberOfStudentsByCourseCode(courseCode);
         }
     }
 }

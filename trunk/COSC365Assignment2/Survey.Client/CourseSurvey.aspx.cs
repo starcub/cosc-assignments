@@ -96,7 +96,7 @@ namespace Survey.Client
             SurveyInstanceEntity survey = new SurveyInstanceEntity();
             survey.Questions = new List<QuestionInstanceEntity>();
             survey.CourseCode = CourseCode;
-            survey.UserCode = Usercode;
+            survey.Usercode = Usercode;
             survey.DateSubmitted = DateTime.Now;
             // loop through the repeater
             foreach (RepeaterItem item in rptQuestions.Items)

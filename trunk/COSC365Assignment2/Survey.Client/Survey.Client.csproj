@@ -72,6 +72,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="CourseSurvey.aspx" />
+    <Content Include="SurveySummary.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="CourseSurvey.aspx.designer.cs">
       <DependentUpon>CourseSurvey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SurveySummary.aspx.cs">
+      <DependentUpon>SurveySummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SurveySummary.aspx.designer.cs">
+      <DependentUpon>SurveySummary.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -26,7 +26,7 @@ namespace Survey.BusinessLayer.DataLayerServiceReference {
         private string CourseCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserCodeField;
+        private string UsercodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RoleField;
@@ -55,14 +55,14 @@ namespace Survey.BusinessLayer.DataLayerServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string UserCode {
+        public string Usercode {
             get {
-                return this.UserCodeField;
+                return this.UsercodeField;
             }
             set {
-                if ((object.ReferenceEquals(this.UserCodeField, value) != true)) {
-                    this.UserCodeField = value;
-                    this.RaisePropertyChanged("UserCode");
+                if ((object.ReferenceEquals(this.UsercodeField, value) != true)) {
+                    this.UsercodeField = value;
+                    this.RaisePropertyChanged("Usercode");
                 }
             }
         }
@@ -181,7 +181,7 @@ namespace Survey.BusinessLayer.DataLayerServiceReference {
         private string CourseNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateSubmittedField;
+        private System.Nullable<System.DateTime> DateSubmittedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.List<Survey.BusinessLayer.DataLayerServiceReference.QuestionInstanceEntity> QuestionsField;
@@ -196,7 +196,7 @@ namespace Survey.BusinessLayer.DataLayerServiceReference {
         private int SurveyInstanceIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserCodeField;
+        private string UsercodeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CourseCode {
@@ -225,7 +225,7 @@ namespace Survey.BusinessLayer.DataLayerServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateSubmitted {
+        public System.Nullable<System.DateTime> DateSubmitted {
             get {
                 return this.DateSubmittedField;
             }
@@ -290,14 +290,14 @@ namespace Survey.BusinessLayer.DataLayerServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UserCode {
+        public string Usercode {
             get {
-                return this.UserCodeField;
+                return this.UsercodeField;
             }
             set {
-                if ((object.ReferenceEquals(this.UserCodeField, value) != true)) {
-                    this.UserCodeField = value;
-                    this.RaisePropertyChanged("UserCode");
+                if ((object.ReferenceEquals(this.UsercodeField, value) != true)) {
+                    this.UsercodeField = value;
+                    this.RaisePropertyChanged("Usercode");
                 }
             }
         }
@@ -468,9 +468,15 @@ namespace Survey.BusinessLayer.DataLayerServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISurveyDLServices/InsertQuestionInstance", ReplyAction="http://tempuri.org/ISurveyDLServices/InsertQuestionInstanceResponse")]
         int InsertQuestionInstance(Survey.BusinessLayer.DataLayerServiceReference.QuestionInstanceEntity question);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISurveyDLServices/GetSurveyInstancesByCourseCodeUsercode", ReplyAction="http://tempuri.org/ISurveyDLServices/GetSurveyInstancesByCourseCodeUsercodeRespon" +
-            "se")]
-        Survey.BusinessLayer.DataLayerServiceReference.SurveyInstanceEntity GetSurveyInstancesByCourseCodeUsercode(string courseCode, string usercode);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISurveyDLServices/GetSurveyInstancesByParticipation", ReplyAction="http://tempuri.org/ISurveyDLServices/GetSurveyInstancesByParticipationResponse")]
+        Survey.BusinessLayer.DataLayerServiceReference.SurveyInstanceEntity GetSurveyInstancesByParticipation(Survey.BusinessLayer.DataLayerServiceReference.Participation participation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISurveyDLServices/GetSurveyInfoByCourseCode", ReplyAction="http://tempuri.org/ISurveyDLServices/GetSurveyInfoByCourseCodeResponse")]
+        Survey.BusinessLayer.DataLayerServiceReference.SurveyInstanceEntity GetSurveyInfoByCourseCode(string courseCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISurveyDLServices/GetTotalNumberOfStudentsByCourseCode", ReplyAction="http://tempuri.org/ISurveyDLServices/GetTotalNumberOfStudentsByCourseCodeResponse" +
+            "")]
+        int GetTotalNumberOfStudentsByCourseCode(string courseCode);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
@@ -516,8 +522,16 @@ namespace Survey.BusinessLayer.DataLayerServiceReference {
             return base.Channel.InsertQuestionInstance(question);
         }
         
-        public Survey.BusinessLayer.DataLayerServiceReference.SurveyInstanceEntity GetSurveyInstancesByCourseCodeUsercode(string courseCode, string usercode) {
-            return base.Channel.GetSurveyInstancesByCourseCodeUsercode(courseCode, usercode);
+        public Survey.BusinessLayer.DataLayerServiceReference.SurveyInstanceEntity GetSurveyInstancesByParticipation(Survey.BusinessLayer.DataLayerServiceReference.Participation participation) {
+            return base.Channel.GetSurveyInstancesByParticipation(participation);
+        }
+        
+        public Survey.BusinessLayer.DataLayerServiceReference.SurveyInstanceEntity GetSurveyInfoByCourseCode(string courseCode) {
+            return base.Channel.GetSurveyInfoByCourseCode(courseCode);
+        }
+        
+        public int GetTotalNumberOfStudentsByCourseCode(string courseCode) {
+            return base.Channel.GetTotalNumberOfStudentsByCourseCode(courseCode);
         }
     }
 }

@@ -9,8 +9,8 @@ namespace Survey.DataEntities
         public int SurveyInstanceID;
         public string CourseCode;
         public string CourseName;
-        public string UserCode;
-        public DateTime DateSubmitted;
+        public string Usercode;
+        public DateTime? DateSubmitted;
         public string Role;
         public string Status;
         public List<QuestionInstanceEntity> Questions;
