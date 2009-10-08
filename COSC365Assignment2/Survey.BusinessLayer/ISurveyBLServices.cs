@@ -19,6 +19,9 @@ namespace Survey.BusinessLayer
         [OperationContract]
         int InsertSurveyInstance(SurveyInstanceEntity survey);
 
+        [OperationContract]
+        int GetTotalNumberOfStudentsByCourseCode(string courseCode);
+
     }
 
 }

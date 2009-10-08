@@ -26,7 +26,7 @@ namespace Survey.DataLayer.CourseInfoServiceReference {
         private string CourseCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserCodeField;
+        private string UsercodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RoleField;
@@ -55,14 +55,14 @@ namespace Survey.DataLayer.CourseInfoServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string UserCode {
+        public string Usercode {
             get {
-                return this.UserCodeField;
+                return this.UsercodeField;
             }
             set {
-                if ((object.ReferenceEquals(this.UserCodeField, value) != true)) {
-                    this.UserCodeField = value;
-                    this.RaisePropertyChanged("UserCode");
+                if ((object.ReferenceEquals(this.UsercodeField, value) != true)) {
+                    this.UsercodeField = value;
+                    this.RaisePropertyChanged("Usercode");
                 }
             }
         }
@@ -162,6 +162,10 @@ namespace Survey.DataLayer.CourseInfoServiceReference {
         // CODEGEN: Generating message contract since element name courseCode from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetCourseByCourseCode", ReplyAction="*")]
         Survey.DataLayer.CourseInfoServiceReference.GetCourseByCourseCodeResponse GetCourseByCourseCode(Survey.DataLayer.CourseInfoServiceReference.GetCourseByCourseCodeRequest request);
+        
+        // CODEGEN: Generating message contract since element name courseCode from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTotalNumberOfStudentsByCourseCode", ReplyAction="*")]
+        Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeResponse GetTotalNumberOfStudentsByCourseCode(Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -292,6 +296,70 @@ namespace Survey.DataLayer.CourseInfoServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTotalNumberOfStudentsByCourseCodeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTotalNumberOfStudentsByCourseCode", Namespace="http://tempuri.org/", Order=0)]
+        public Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeRequestBody Body;
+        
+        public GetTotalNumberOfStudentsByCourseCodeRequest() {
+        }
+        
+        public GetTotalNumberOfStudentsByCourseCodeRequest(Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetTotalNumberOfStudentsByCourseCodeRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string courseCode;
+        
+        public GetTotalNumberOfStudentsByCourseCodeRequestBody() {
+        }
+        
+        public GetTotalNumberOfStudentsByCourseCodeRequestBody(string courseCode) {
+            this.courseCode = courseCode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTotalNumberOfStudentsByCourseCodeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTotalNumberOfStudentsByCourseCodeResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeResponseBody Body;
+        
+        public GetTotalNumberOfStudentsByCourseCodeResponse() {
+        }
+        
+        public GetTotalNumberOfStudentsByCourseCodeResponse(Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetTotalNumberOfStudentsByCourseCodeResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int GetTotalNumberOfStudentsByCourseCodeResult;
+        
+        public GetTotalNumberOfStudentsByCourseCodeResponseBody() {
+        }
+        
+        public GetTotalNumberOfStudentsByCourseCodeResponseBody(int GetTotalNumberOfStudentsByCourseCodeResult) {
+            this.GetTotalNumberOfStudentsByCourseCodeResult = GetTotalNumberOfStudentsByCourseCodeResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
     public interface CourseInfoServiceSoapChannel : Survey.DataLayer.CourseInfoServiceReference.CourseInfoServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -343,6 +411,19 @@ namespace Survey.DataLayer.CourseInfoServiceReference {
             inValue.Body.courseCode = courseCode;
             Survey.DataLayer.CourseInfoServiceReference.GetCourseByCourseCodeResponse retVal = ((Survey.DataLayer.CourseInfoServiceReference.CourseInfoServiceSoap)(this)).GetCourseByCourseCode(inValue);
             return retVal.Body.GetCourseByCourseCodeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeResponse Survey.DataLayer.CourseInfoServiceReference.CourseInfoServiceSoap.GetTotalNumberOfStudentsByCourseCode(Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeRequest request) {
+            return base.Channel.GetTotalNumberOfStudentsByCourseCode(request);
+        }
+        
+        public int GetTotalNumberOfStudentsByCourseCode(string courseCode) {
+            Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeRequest inValue = new Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeRequest();
+            inValue.Body = new Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeRequestBody();
+            inValue.Body.courseCode = courseCode;
+            Survey.DataLayer.CourseInfoServiceReference.GetTotalNumberOfStudentsByCourseCodeResponse retVal = ((Survey.DataLayer.CourseInfoServiceReference.CourseInfoServiceSoap)(this)).GetTotalNumberOfStudentsByCourseCode(inValue);
+            return retVal.Body.GetTotalNumberOfStudentsByCourseCodeResult;
         }
     }
 }

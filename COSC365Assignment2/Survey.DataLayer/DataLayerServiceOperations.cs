@@ -26,17 +26,17 @@ namespace Survey.DataLayer
             return new CourseInfoServiceReference.CourseInfoServiceSoapClient().GetCourseByUserCode(userCode);
         }
 
-        public SurveyInstanceEntity GetSurveyInstancesByCourseCodeUsercode(string courseCode, string usercode)
+        public SurveyInstanceEntity GetSurveyInstancesByParticipation(Participation participation)
         {
             SurveyInstanceEntity surveyInstance = new SurveyInstanceEntity();
-            string commandText = "SELECT * FROM SurveyInstance si JOIN Survey s ON si.SurveyID = s.ID WHERE si.CourseCode = @CourseCode AND Usercode = @Usercode";
+            string commandText = "SELECT * FROM SurveyInstance WHERE CourseCode = @CourseCode AND Usercode = @Usercode";
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(commandText, connection);
                 command.Parameters.Add("@CourseCode", SqlDbType.NVarChar);
-                command.Parameters["@CourseCode"].Value = courseCode;
+                command.Parameters["@CourseCode"].Value = participation.CourseCode;
                 command.Parameters.Add("@UserCode", SqlDbType.NVarChar);
-                command.Parameters["@UserCode"].Value = usercode;
+                command.Parameters["@UserCode"].Value = participation.Usercode;
                 try
                 {
                     connection.Open();
@@ -49,16 +49,18 @@ namespace Survey.DataLayer
                             {
                                 surveyInstance.SurveyInstanceID = (int)reader["ID"];
                                 surveyInstance.SurveyID = (int)reader["SurveyID"];
-                                surveyInstance.CourseCode = (string)reader["si.CourseCode"];
-                                surveyInstance.CourseName = (string)reader["CourseName"];
+                                surveyInstance.CourseCode = (string)reader["CourseCode"];
+                                //surveyInstance.CourseName = participation.cou
                                 surveyInstance.DateSubmitted = (DateTime)reader["DateSubmitted"];
-                                surveyInstance.StartDate = (DateTime)reader["StartDate"];
-                                surveyInstance.EndDate = (DateTime)reader["EndDate"];
                             }
                         }
+                        // if nothing found, means the usercode provided hasn't submitted a survey for the course
                         else
                         {
-                            surveyInstance = null;
+                            surveyInstance.CourseCode = participation.CourseCode;
+                            surveyInstance.Role = participation.Role;
+                            //set the DateSubmitted field to null means it hasn't been submitted.
+                            surveyInstance.DateSubmitted = null;
                         }
                     }
                 }
@@ -68,6 +70,41 @@ namespace Survey.DataLayer
                 }
             }
             return surveyInstance;
+        }
+
+        public SurveyInstanceEntity GetSurveyInfoByCourseCode(string courseCode)
+        {
+            SurveyInstanceEntity survey = new SurveyInstanceEntity();
+            string commandText = "SELECT * FROM Survey WHERE CourseCode = @CourseCode";
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(commandText, connection);
+                command.Parameters.Add("@CourseCode", SqlDbType.NVarChar);
+                command.Parameters["@CourseCode"].Value = courseCode;
+                try
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            survey.SurveyID = (int)reader["ID"];
+                            survey.StartDate = (DateTime)reader["StartDate"];
+                            survey.EndDate = (DateTime)reader["EndDate"];
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return survey;
+        }
+
+        public int GetTotalNumberOfStudentsByCourseCode(string courseCode)
+        {
+            return new CourseInfoServiceReference.CourseInfoServiceSoapClient().GetTotalNumberOfStudentsByCourseCode(courseCode);
         }
 
         public SurveyInstanceEntity GetSurveyByCourseCode(string courseCode)
@@ -96,7 +133,7 @@ namespace Survey.DataLayer
                 command.Parameters["@CourseCode"].Value = survey.CourseCode;
 
                 command.Parameters.Add("@Usercode", SqlDbType.NVarChar);
-                command.Parameters["@Usercode"].Value = survey.UserCode;
+                command.Parameters["@Usercode"].Value = survey.Usercode;
                 command.Parameters.Add("@DateSubmitted", SqlDbType.DateTime);
                 command.Parameters["@DateSubmitted"].Value = survey.DateSubmitted;
 

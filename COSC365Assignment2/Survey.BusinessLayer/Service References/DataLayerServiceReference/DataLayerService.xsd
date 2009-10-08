@@ -30,7 +30,7 @@
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" name="UserCode" nillable="true" type="xs:string">
+      <xs:element minOccurs="0" name="Usercode" nillable="true" type="xs:string">
         <xs:annotation>
           <xs:appinfo>
             <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
@@ -89,18 +89,45 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSurveyInstancesByCourseCodeUsercode">
+  <xs:element name="GetSurveyInstancesByParticipation">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="courseCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="usercode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="participation" nillable="true" type="tns:Participation" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSurveyInstancesByCourseCodeUsercodeResponse">
+  <xs:element name="GetSurveyInstancesByParticipationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="GetSurveyInstancesByCourseCodeUsercodeResult" nillable="true" type="q4:SurveyInstanceEntity" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="GetSurveyInstancesByParticipationResult" nillable="true" type="q4:SurveyInstanceEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSurveyInfoByCourseCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="courseCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSurveyInfoByCourseCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Survey.DataEntities" minOccurs="0" name="GetSurveyInfoByCourseCodeResult" nillable="true" type="q5:SurveyInstanceEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalNumberOfStudentsByCourseCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="courseCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalNumberOfStudentsByCourseCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTotalNumberOfStudentsByCourseCodeResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

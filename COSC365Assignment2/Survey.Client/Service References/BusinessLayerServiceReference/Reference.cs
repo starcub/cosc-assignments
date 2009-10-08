@@ -26,7 +26,7 @@ namespace Survey.Client.BusinessLayerServiceReference {
         private string CourseNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateSubmittedField;
+        private System.Nullable<System.DateTime> DateSubmittedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.List<Survey.Client.BusinessLayerServiceReference.QuestionInstanceEntity> QuestionsField;
@@ -41,7 +41,7 @@ namespace Survey.Client.BusinessLayerServiceReference {
         private int SurveyInstanceIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserCodeField;
+        private string UsercodeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CourseCode {
@@ -70,7 +70,7 @@ namespace Survey.Client.BusinessLayerServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateSubmitted {
+        public System.Nullable<System.DateTime> DateSubmitted {
             get {
                 return this.DateSubmittedField;
             }
@@ -135,14 +135,14 @@ namespace Survey.Client.BusinessLayerServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UserCode {
+        public string Usercode {
             get {
-                return this.UserCodeField;
+                return this.UsercodeField;
             }
             set {
-                if ((object.ReferenceEquals(this.UserCodeField, value) != true)) {
-                    this.UserCodeField = value;
-                    this.RaisePropertyChanged("UserCode");
+                if ((object.ReferenceEquals(this.UsercodeField, value) != true)) {
+                    this.UsercodeField = value;
+                    this.RaisePropertyChanged("Usercode");
                 }
             }
         }
@@ -387,6 +387,10 @@ namespace Survey.Client.BusinessLayerServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISurveyBLServices/InsertSurveyInstance", ReplyAction="http://tempuri.org/ISurveyBLServices/InsertSurveyInstanceResponse")]
         int InsertSurveyInstance(Survey.Client.BusinessLayerServiceReference.SurveyInstanceEntity survey);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISurveyBLServices/GetTotalNumberOfStudentsByCourseCode", ReplyAction="http://tempuri.org/ISurveyBLServices/GetTotalNumberOfStudentsByCourseCodeResponse" +
+            "")]
+        int GetTotalNumberOfStudentsByCourseCode(string courseCode);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
@@ -426,6 +430,10 @@ namespace Survey.Client.BusinessLayerServiceReference {
         
         public int InsertSurveyInstance(Survey.Client.BusinessLayerServiceReference.SurveyInstanceEntity survey) {
             return base.Channel.InsertSurveyInstance(survey);
+        }
+        
+        public int GetTotalNumberOfStudentsByCourseCode(string courseCode) {
+            return base.Channel.GetTotalNumberOfStudentsByCourseCode(courseCode);
         }
     }
 }

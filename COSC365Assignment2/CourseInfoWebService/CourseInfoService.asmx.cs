@@ -20,6 +20,7 @@ namespace SurveyManageApp.CourseInfoWebService
     // [System.Web.Script.Services.ScriptService]
     public class CourseInfoService : System.Web.Services.WebService
     {
+        #region Properties
 
         public string ConnectionString
         {
@@ -28,6 +29,10 @@ namespace SurveyManageApp.CourseInfoWebService
                 return ConfigurationManager.ConnectionStrings["CourseInfoConnectionString"].ConnectionString;
             }
         }
+
+        #endregion
+
+        #region WebMethods
 
         [WebMethod]
         public List<Participation> GetCourseByUserCode(string userCode)
@@ -40,6 +45,16 @@ namespace SurveyManageApp.CourseInfoWebService
         {
             return getCourseByCourseCode(courseCode);
         }
+
+        [WebMethod]
+        public int GetTotalNumberOfStudentsByCourseCode(string courseCode)
+        {
+            return getTotalNumberOfStudentsByCourseCode(courseCode);
+        }
+
+        #endregion
+
+        #region Methods
 
         private List<Participation> getParticipationByUserCode(string userCode)
         {
@@ -57,7 +72,7 @@ namespace SurveyManageApp.CourseInfoWebService
                         {
                             Participation participation = new Participation();
                             participation.CourseCode = (string)reader["CourseCode"];
-                            participation.UserCode=userCode;
+                            participation.Usercode = userCode;
                             participation.Role = (string)reader["Role"];
                             results.Add(participation);
                         }
@@ -89,6 +104,34 @@ namespace SurveyManageApp.CourseInfoWebService
             }
             return results;
         }
+
+        private int getTotalNumberOfStudentsByCourseCode(string courseCode)
+        {
+            int count = 0;
+            string commandText = "SELECT COUNT(*) AS count FROM Participation";
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(commandText, connection);
+                try
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            count = (int)reader["count"];
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return count;
+        }
+
+        #endregion
 
     }
 
