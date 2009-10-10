@@ -1,33 +1,33 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survey.Client", "Survey.Client\Survey.Client.csproj", "{A0175192-8CD5-4317-9F92-9148E6958737}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.Client", "SurveyApp.Client\SurveyApp.Client.csproj", "{A0175192-8CD5-4317-9F92-9148E6958737}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5A2299BA-2FD8-4652-98FC-8E58FE0A8C37} = {5A2299BA-2FD8-4652-98FC-8E58FE0A8C37}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survey.DataEntities", "Survey.DataEntities\Survey.DataEntities.csproj", "{20A486B1-63E5-4AC4-B1D2-C5F17EC320BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.DataEntities", "SurveyApp.DataEntities\SurveyApp.DataEntities.csproj", "{20A486B1-63E5-4AC4-B1D2-C5F17EC320BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyManageApp.CourseInfoWebService", "CourseInfoWebService\SurveyManageApp.CourseInfoWebService.csproj", "{8AC0BF3E-A6A2-473F-B768-3C7C8DE9BB29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyManageApp.CourseInfoWebService", "SurveyManageApp.CourseInfoWebService\SurveyManageApp.CourseInfoWebService.csproj", "{8AC0BF3E-A6A2-473F-B768-3C7C8DE9BB29}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyManageApp.DataEntities", "SurveyManageApp.DataEntities\SurveyManageApp.DataEntities.csproj", "{4DDD4E3D-202C-466D-97BD-31638B0029AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survey.BusinessLayerWCFService", "Survey.BusinessLayerWCFService\Survey.BusinessLayerWCFService.csproj", "{5A2299BA-2FD8-4652-98FC-8E58FE0A8C37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.BusinessLayerWCFService", "SurveyApp.BusinessLayerWCFService\SurveyApp.BusinessLayerWCFService.csproj", "{5A2299BA-2FD8-4652-98FC-8E58FE0A8C37}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2E25EE86-1EA8-4E3A-889F-338A3B617863} = {2E25EE86-1EA8-4E3A-889F-338A3B617863}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survey.DataLayerWCFService", "Survey.DataLayerWCFService\Survey.DataLayerWCFService.csproj", "{2E25EE86-1EA8-4E3A-889F-338A3B617863}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.DataLayerWCFService", "SurveyApp.DataLayerWCFService\SurveyApp.DataLayerWCFService.csproj", "{2E25EE86-1EA8-4E3A-889F-338A3B617863}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8AC0BF3E-A6A2-473F-B768-3C7C8DE9BB29} = {8AC0BF3E-A6A2-473F-B768-3C7C8DE9BB29}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survey.BusinessLayer", "Survey.BusinessLayer\Survey.BusinessLayer.csproj", "{5D60A502-13CA-4612-82B6-612ABED76EE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.BusinessLayer", "SurveyApp.BusinessLayer\SurveyApp.BusinessLayer.csproj", "{5D60A502-13CA-4612-82B6-612ABED76EE8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2E25EE86-1EA8-4E3A-889F-338A3B617863} = {2E25EE86-1EA8-4E3A-889F-338A3B617863}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survey.DataLayer", "Survey.DataLayer\Survey.DataLayer.csproj", "{4C9D3146-5BF8-4310-88EE-BCBEB2A6B2D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.DataLayer", "SurveyApp.DataLayer\SurveyApp.DataLayer.csproj", "{4C9D3146-5BF8-4310-88EE-BCBEB2A6B2D2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8AC0BF3E-A6A2-473F-B768-3C7C8DE9BB29} = {8AC0BF3E-A6A2-473F-B768-3C7C8DE9BB29}
 	EndProjectSection
