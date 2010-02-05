@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Survey.DataLayer.DataLayerServiceOperations" CodeBehind="Survey.DataLayer.DataLayerServiceOperations.cs" %>

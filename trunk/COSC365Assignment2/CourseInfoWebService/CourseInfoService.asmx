@@ -1,1 +1,0 @@
-﻿<%@ WebService Language="C#" CodeBehind="CourseInfoService.asmx.cs" Class="SurveyManageApp.CourseInfoWebService.CourseInfoService" %>
